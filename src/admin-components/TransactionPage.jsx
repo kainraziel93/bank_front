@@ -251,6 +251,7 @@ const handlePasswordChange = async ()=>{
                     <th>bank beneficiary</th>
                     <th>amount</th>
                     <th>Digit</th>
+                    <th className='text-center'>actions</th>
                 </tr>
                   
                 </thead>
@@ -269,6 +270,9 @@ const handlePasswordChange = async ()=>{
                       <td>{element.beneficiaryBank}</td>
                       <td>{element.amount}</td>
                       <td>{element.sixDigit}</td>
+                      <td className='d-flex flex-row justify-content-center gap-2'><span className='btn btn-info' onClick={()=>navigate("/admin/client_transaction/1",{state:{transaction:element}})}>modifier</span>
+                       <span className='btn btn-danger'>supprimer</span>
+                       </td>
                     </tr>
                   )
                 })}

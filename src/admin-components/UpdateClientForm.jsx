@@ -24,7 +24,7 @@ const UpdateClientForm = () => {
     let [balanceJoin,setBalanceJoin] = useState(update.balanceJoin)
     let [balanceIsa,setBalanceIsa] = useState(update.balanceIsa)
     let [balanceAdvance,setBalanceAdvance] = useState(update.balanceAdvance)
-    let [account,setAccount] = useState('')
+    let [account,setAccount] = useState(update.account)
     let [username,setUsername] =useState(update.username)
     let [password,setPassword] = useState(update.password)
     let [newPassword,setNewPassword] = useState(update.password)
@@ -39,7 +39,7 @@ const UpdateClientForm = () => {
 
         const client = {
             id,firstname,lastname,email,balanceJoin,balanceIsa,adress,city,
-            balanceAdvance,account:"DOLLAR",username,role,password,newPassword
+            balanceAdvance,account:account,username,role,password,newPassword
         }
         const uuid = localStorage.getItem("uuid");
         console.log("uuid=====>",uuid)
@@ -93,7 +93,7 @@ const UpdateClientForm = () => {
             onChange={
                 (e)=>{ setAccount(e.currentTarget.value)
                     console.log(account)}}   placeholder=""> 
-                 <option value="DOLLAR"> DOLLARS</option>  <option value="EUROS"> EUROS</option>  <option value="LIVRE">LIVRES</option>
+                 <option value="DOLLAR"> DOLLARS</option>  <option value="EURO"> EUROS</option>  <option value="LIVRE">LIVRES</option>
             </select>
         </div>
         <div className="d-flex align-items-center mt-2 justify-content-between gap-100">

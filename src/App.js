@@ -10,6 +10,7 @@ import ListUser from './admin-components/ListUsers'
 import CreateUserForm from './admin-components/CreateUserForm';
 import UpdateClientForm from './admin-components/UpdateClientForm';
 import TransactionPage from './admin-components/TransactionPage';
+import EditTransactionUser from './admin-components/EditTransactionUser';
 function App() {
   return (
     <BrowserRouter>
@@ -23,8 +24,13 @@ function App() {
               <Route index element={<ListUser/>}/>
               <Route path='add' element={<CreateUserForm/>}/>
               <Route path="edit" element={<UpdateClientForm/>}/>
+
             </Route>
-            <Route path="admin/transaction/:id" element={<TransactionPage/>}/>
+            <Route path="admin/transaction/:id" element={<TransactionPage/>}> 
+        
+            </Route>
+            <Route path="admin/client_transaction/:id" element={<EditTransactionUser/>}/>
+           
       </Routes>
     </BrowserRouter>
   )
